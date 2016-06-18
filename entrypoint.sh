@@ -20,7 +20,7 @@ chown webdav /var/log/lighttpd
 # able to write to it. This is ok if you mount from volumes, perhaps less if you
 # mount from the host, so do this conditionally.
 OWNERSHIP=${OWNERSHIP:=false}
-if [ "$OWNERSHIP" -eq "true" ]; then
+if [ "$OWNERSHIP" == "true" ]; then
     chown -R webdav /webdav
     chgrp -R webdav /webdav
 fi
@@ -34,7 +34,7 @@ fi
 # Reflect the value of READWRITE into the lighttpd configuration
 # webdav.is-readonly. Do this at all times, no matters what was in the file (so
 # that THIS shell decides upon the R/W status and nothing else.)
-if [ "$READWRITE" = true ]; then
+if [ "$READWRITE" == "true" ]; then
     sed -i "s/is-readonly = \"\\w*\"/is-readonly = \"disable\"/" /etc/lighttpd/webdav.conf
 else
     sed -i "s/is-readonly = \"\\w*\"/is-readonly = \"enable\"/" /etc/lighttpd/webdav.conf
