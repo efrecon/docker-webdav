@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.3
+FROM alpine:3.4
 MAINTAINER Jeroen Geusebroek <me@jeroengeusebroek.nl>
 
 ENV PACKAGE_LIST="lighttpd lighttpd-mod_webdav lighttpd-mod_auth" \
