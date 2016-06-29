@@ -35,6 +35,8 @@ rerouted so they can be capture by the regular Docker logging facilities.
 
 ## Optional environment variables
 
+* `USERNAME` usename of the lighttpd daemon account (default: webdav).
+* `GROUP` group name of the lighttpd daemon account (default: webdav).
 * `USER_UID` User ID of the lighttpd daemon account (default: 2222).
 * `USER_GID` Group ID of the lighttpd daemon account (default: 2222).
 * `WHITELIST` Regexp for a list of IP's (default: none). Example: `-e WHITELIST='192.168.1.*|172.16.1.2'`
